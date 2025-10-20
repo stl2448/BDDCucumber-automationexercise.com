@@ -21,4 +21,4 @@ Then account deleted message is displayed
 
 Examples:
 |name|email_address|
-|thiru|thirutesting2010@yopmail.com|
+|thiru|thirutesting2110@yopmail.com|
