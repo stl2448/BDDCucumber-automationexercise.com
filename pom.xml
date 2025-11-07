@@ -6,8 +6,8 @@
 	<artifactId>com.BDDCucumberPractice1</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<maven.compiler.source>17.0.12</maven.compiler.source>
-		<maven.compiler.target>17.0.12</maven.compiler.target>
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
 	</properties>
 	<dependencies>
 		<!--
@@ -59,8 +59,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.11.0</version> <!-- Use a recent version -->
 				<configuration>
-					<source>17.0.12</source> <!-- Specify your Java source version -->
-					<target>17.0.12</target> <!-- Specify your Java target version -->
+					<source>17</source> <!-- Specify your Java source version -->
+					<target>17</target> <!-- Specify your Java target version -->
 				</configuration>
 			</plugin>
 			<plugin>
