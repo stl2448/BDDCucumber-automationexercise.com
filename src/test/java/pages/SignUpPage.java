@@ -79,9 +79,9 @@ public class SignUpPage extends BasePage {
 		type(passwordElement, password);
 	}
 	
-	public void selectDay(int day) 
+	public void selectDay(int day)
 	{
-		selectOptionByName(dateInDOB, Integer.toString(day));
+		selectOptionByName(dateInDOB, String.valueOf(day));
 	}
 	
 	public void selectMonth(String month) 
@@ -91,7 +91,7 @@ public class SignUpPage extends BasePage {
 	
 	public void selectYear(int year) 
 	{
-		selectOptionByName(yearInDOB, Integer.toString(year));
+		selectOptionByName(yearInDOB, String.valueOf(year));
 	}
 	public void enterFirstName(String firstName) 
 	{
@@ -148,11 +148,12 @@ public class SignUpPage extends BasePage {
 		selectCheckBox(specialOffersOptinElement);
 	}
 	
-	@FindBy(xpath="//button[@type='submit' and @data-qa='create-account']")
+	@FindBy(xpath="//button[@data-qa='create-account']")
 	WebElement createAccountElement;
 	
 	public AccountCreatedPage clickCreateAccount() 
 	{
+		scrollToTheElement(createAccountElement);
 		clickElement(createAccountElement);
 		AccountCreatedPage accountCreatedPage = new AccountCreatedPage();
 		return accountCreatedPage;

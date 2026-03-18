@@ -9,7 +9,7 @@ And user clicked on signUp button
 Then signUp Page is displayed
 When user enter all necessary details
 |title|password|day|month|year|firstName|lastName|company|address|country|state|city|zipcode|mobile|
-|mr|Test@123|10|March|1998|thirumalesh|stl|cognizant|hyderabad|India|Telangana|Hyderabad|GF2 E45|1212121212|
+|male|Test@123|10|March|1998|thirumalesh|stl|cognizant|hyderabad|India|Telangana|Hyderabad|GF2 E45|1212121212|
 And opted for newsletter and special offers checkboxes
 And clicked on CreateAccount button
 Then Account created message is displayed
@@ -21,4 +21,4 @@ Then account deleted message is displayed
 
 Examples:
 |name|email_address|
-|thiru|thirutesting2110@yopmail.com|
+|thiru|thirutesting1803@yopmail.com|

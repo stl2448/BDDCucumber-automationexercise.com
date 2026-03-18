@@ -40,8 +40,8 @@ public class BasePage {
 	
 	public void selectOptionByName(WebElement element, String option) 
 	{
-		Waits.waitForElementToBeClickable(element);
-		clickElement(element);
+		// Waits.waitForElementToBeClickable(element);
+		// clickElement(element);
 		Select sel = new Select(element);
 		sel.selectByValue(option);
 	}
