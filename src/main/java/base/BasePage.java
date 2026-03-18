@@ -116,4 +116,10 @@ public class BasePage {
 	{
 		return driver.getTitle();
 	}
+
+	public void hoverOnTheElement(WebElement element)
+	{
+		Actions act = new Actions(driver);
+		act.moveToElement(element).perform();
+	}
 }

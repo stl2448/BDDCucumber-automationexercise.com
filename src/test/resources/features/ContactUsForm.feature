@@ -1,6 +1,6 @@
 Feature: Submit Contact Us Form
 
-  @wip
+  @contactus
   Scenario: Verify contact us form submission
     Given user launch application
     When user click on Contact us button
