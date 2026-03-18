@@ -59,11 +59,14 @@ public class ContactUsPage extends BasePage {
 	@FindBy(xpath = "//input[@name='upload_file']")
 	WebElement uploadFileElement;
 
-	public void uploadFile(String fileName) {
-		Waits.waitForElementToBeClickable(uploadFileElement);
+	public void uploadFile(String filePath) {
+		// Waits.waitForElementToBeClickable(uploadFileElement);
 		//type(uploadFileElement, fileName);
-		clickElement(uploadFileElement);
-		pasteContentFromClipBoard(fileName);
+		// clickElement(uploadFileElement);
+		// pasteContentFromClipBoard(fileName);
+
+		Waits.waitForVisibilityOfElement(uploadFileElement);
+		uploadFileElement.sendKeys(filePath);
 	}
 
 	@FindBy(xpath = "//input[@name='submit']")

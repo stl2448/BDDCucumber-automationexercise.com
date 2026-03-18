@@ -2,7 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Regression Suite">
 <listeners>
-<listener class-name="utils.TestListener"></listener>
+<listener class-name="TestListener"></listener>
 </listeners>
   <test thread-count="10" name="Login and SignUp Test">
   <classes>
