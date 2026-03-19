@@ -8,20 +8,34 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import utils.DatePattern;
 
 public class ExtentManager {
+
 	private static ExtentReports reports;
 
 	public static ExtentReports getReports() {
+
 		if (reports == null) {
+
 			reports = new ExtentReports();
+
 			String date = DatePattern.getDate();
 			String projectPath = System.getProperty("user.dir");
-			File filePath = new File(projectPath + "\\reports\\" + date + ".html");
+
+			String reportDir = projectPath + "\\reports\\";
+			File dir = new File(reportDir);
+
+			if (!dir.exists()) {
+				dir.mkdirs(); // ✅ create folder
+			}
+
+			String filePath = reportDir + date + ".html";
+
 			ExtentSparkReporter reporter = new ExtentSparkReporter(filePath);
-			reporter.config().setDocumentTitle("Test Reports doc Title");
-			reporter.config().setReportName("Test Reports report name");
+			reporter.config().setDocumentTitle("Automation Report");
+			reporter.config().setReportName("Test Execution Report");
+
 			reports.attachReporter(reporter);
 		}
+
 		return reports;
 	}
-
 }
