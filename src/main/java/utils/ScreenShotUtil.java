@@ -12,24 +12,32 @@ import base.DriverFactory;
 
 public class ScreenShotUtil {
 
-	private static WebDriver driver = DriverFactory.getDriver();
-
 	public static String getScreenShot() {
-		
-		if(driver==null) 
-		{
+
+		WebDriver driver = DriverFactory.getDriver(); // ✅ always fresh driver
+
+		if (driver == null) {
 			System.out.println("Driver is null");
 			return null;
 		}
-		String date = DatePattern.getDate();
+
 		String projectPath = System.getProperty("user.dir");
-		String filePath = projectPath + "\\screenshots\\" + date + ".png";
-		File file = new File(filePath);
-		File scr = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String date = DatePattern.getDate();
+
+		String screenshotDir = projectPath + "\\screenshots\\";
+		File dir = new File(screenshotDir);
+
+		if (!dir.exists()) {
+			dir.mkdirs(); // ✅ create folder
+		}
+
+		String filePath = screenshotDir + date + ".png";
+
+		File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+
 		try {
-			FileUtils.copyFile(scr, file);
+			FileUtils.copyFile(src, new File(filePath));
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
