@@ -1,4 +1,4 @@
-package utils;
+package testutils;
 
 import com.aventstack.extentreports.Status;
 import stepdefinitions.Hooks;

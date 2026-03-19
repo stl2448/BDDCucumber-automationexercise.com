@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 import pages.HomePage;
 import pages.SignUpAndSignInPage;
 import utils.ConfigReader;
-import utils.ExtentLogger;
+import testutils.ExtentLogger;
 
 public class LoginSteps {
 

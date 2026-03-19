@@ -5,7 +5,6 @@ import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import utils.Waits;
 
 import java.util.List;
@@ -50,8 +49,8 @@ public class ProductsPage extends BasePage {
             String name = overlay.findElement(By.tagName("p")).getText().trim();
             if(name.equalsIgnoreCase(productName))
            {
-               WebElement viewDetailsButton = overlay.findElement(By.xpath(".//a[contains(text(),'Add to cart')]"));
-               clickElement(viewDetailsButton);
+               WebElement addToCart = overlay.findElement(By.xpath(".//a[contains(text(),'Add to cart')]"));
+               clickElement(addToCart);
                return;
            }
         }
@@ -76,5 +75,24 @@ public class ProductsPage extends BasePage {
         return new CartPage();
     }
 
+    public ProductDetailsPage clickViewProduct(String productName)
+    {
+        List<WebElement> productCards = getProductTiles();
+        for(WebElement productCard : productCards)
+        {
+            scrollToTheElement(productCard);
+           // hoverOnTheElement(productCard);
+          //  WebElement overlay = productCard.findElement(By.xpath(".//div[@class='overlay-content']"));
+            String name = productCard.findElement(By.tagName("p")).getText().trim();
+            if(name.equalsIgnoreCase(productName))
+            {
+                WebElement viewDetailsButton = productCard.findElement(By.xpath(".//a[contains(text(),'View Product')]"));
+                clickElement(viewDetailsButton);
+                return new ProductDetailsPage();
+            }
+        }
+        throw new RuntimeException("Product Not Found:  " + productName);
+
+    }
 
 }

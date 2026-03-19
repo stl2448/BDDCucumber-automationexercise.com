@@ -1,6 +1,6 @@
 Feature: Add Product to Cart
 
-  @contactus @wip
+  @addToCart
   Scenario Outline: Verify product added to Cart
     Given user launch application
     When user click on Products button
