@@ -71,6 +71,7 @@ public class ProductsPage extends BasePage {
 
     public CartPage clickViewCart()
     {
+        Waits.waitForVisibilityOfElement(viewCart);
         clickElement(viewCart);
         return new CartPage();
     }

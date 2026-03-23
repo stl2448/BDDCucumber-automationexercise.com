@@ -1,6 +1,5 @@
 package stepdefinitions;
 
-import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
@@ -9,7 +8,7 @@ import pages.ProductDetailsPage;
 import pages.ProductsPage;
 import testutils.ExtentLogger;
 
-public class ProductPageSteps {
+public class ProductsPageSteps {
     HomePage homePage = new HomePage();
     ProductsPage  productsPage = new ProductsPage();
     ProductDetailsPage productDetailsPage = new ProductDetailsPage();
@@ -55,6 +54,7 @@ public class ProductPageSteps {
     public void productDetailsPageIsDisplayed() {
         ExtentLogger.logStep();
         productDetailsPage.verifyProductDetailsPage();
+        productDetailsPage.verifyProductByName("");
         ExtentLogger.logPass();
     }
 }
