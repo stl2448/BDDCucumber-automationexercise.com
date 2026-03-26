@@ -27,6 +27,7 @@ public class ProductDetailsPageSteps {
     @Then("^product (.+) is added to the cart$")
     public void productIsAddedToTheCart(String productName) {
         Assert.assertTrue(productDetailsPage.isProductAddedToCart());
+        productDetailsPage.clickViewCart();
         Assert.assertTrue(cartPage.checkProductByName(productName));
     }
 }

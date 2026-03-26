@@ -1,6 +1,6 @@
 Feature: Verify Product Details Page
 
-  @productDetails @wip
+  @productDetails
   Scenario Outline: Verify product details page
     Given user launch application
     When user click on Products button
@@ -12,7 +12,6 @@ Feature: Verify Product Details Page
       | productName |
       |Winter Top|
 
-    @wip
   Scenario Outline: Update product quantity and click Add to cart
     Given user launch application
     When user click on Products button
